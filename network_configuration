@@ -1,0 +1,29 @@
+{
+  "N_TRAIN": 0.8,
+  "EPOCHS": 50,
+  "BATCH_SIZE": 180,
+  "VERBOSE": 0,
+  "LOSS": "mse",
+  "OPTIMIZER": "adam",
+  "MOD_MINUTES": [
+    60,
+    120,
+    180,
+    240,
+    480
+  ],
+  "SCALERS": {
+    "60": "resources/pkl/scaler_60.pkl",
+    "120": "resources/pkl/scaler_120.pkl",
+    "180": "resources/pkl/scaler_180.pkl",
+    "240": "resources/pkl/scaler_240.pkl",
+    "480": "resources/pkl/scaler_480.pkl"
+  },
+  "MODELS": {
+    "60": "resources/h5/forecast_60.h5",
+    "120": "resources/h5/forecast_120.h5",
+    "180": "resources/h5/forecast_180.h5",
+    "240": "resources/h5/forecast_240.h5",
+    "480": "resources/h5/forecast_480.h5"
+  }
+}
