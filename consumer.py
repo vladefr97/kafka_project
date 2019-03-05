@@ -6,7 +6,10 @@ def start_listen_topic(topic, timeout=1000, host='localhost:9092', outfile=None)
     while True:
         con = KafkaConsumer(topic, auto_offset_reset='latest',
                             bootstrap_servers=host,
-                            api_version=(0, 10), consumer_timeout_ms=timeout)
+                            api_version=(0, 10), consumer_timeout_ms=timeout,
+                            # Данный параметр задает максимальный размер сообщения
+                            max_partition_fetch_bytes=1073741824)
+        # con.config['fetch_max_bytes'] = 1073741824
         for msg in con:
             print(msg.value)
             if outfile is not None:
