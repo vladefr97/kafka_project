@@ -1,0 +1,13 @@
+Объект Producer публикует сообщения в указанном топике, объект Consumer считывает сообщения из топика.
+
+1. Для работы программы необходимо скачать бинарники с сайта Apache.
+
+2. Зайти в скачанную папку.
+3. Запустить Kafka Sever командой:
+bin/kafka-server-start.sh config/server.properties
+
+4. Если не заработает, необходимо запустить Zookeeper командой:
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+Процесс запуска описан в tutorial.
+Ссылка на tutorial по kafka: https://towardsdatascience.com/getting-started-with-apache-kafka-in-python-604b3250aa05
