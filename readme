@@ -12,3 +12,10 @@ bin/kafka-server-start.sh config/server.properties
 
 Процесс запуска описан в tutorial.
 Ссылка на tutorial по kafka: https://towardsdatascience.com/getting-started-with-apache-kafka-in-python-604b3250aa05
+
+Изначально в kafka стоит ограничение на максимальный размер сообщения, чтобы это изменить нужно сделать следующее:
+1. В брокере увеличить значения свойств message.max.bytes и replica.fetch.max.bytes. message.max.bytes должен быть равен или меньше, 
+чем replica.fetch.max.bytes. Свойства записаны в файле config/sever.properies (если этих свойств ранее не было в файле, их нужно добавить).
+После внесения изменений сервер нужно перезапустить.
+2. Производитель: увеличить max.request.size, чтобы отправить сообщение большего размера.
+3. Потребитель: увеличьте max.partition.fetch.bytes, чтобы получать сообщения большего размера.
